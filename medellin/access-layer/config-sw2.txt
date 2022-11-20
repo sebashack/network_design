@@ -1,0 +1,14 @@
+sw2-access-me(config)#hostname sw2-access-me
+
+sw2-access-me(config)#vlan 10
+sw2-access-me(config-vlan)#name DESIGN
+sw2-access-me(config-vlan)#exit
+
+sw2-access-me(config)#interface range fastEthernet0/1 - 23
+sw2-access-me(config-if-range)#switchport mode access
+sw2-access-me(config-if-range)#switchport access vlan 10
+sw2-access-me(config-vlan)#exit
+
+sw2-access-me(config)#interface fastEthernet 0/24
+sw2-access-me(config-if)#switchport mode trunk
+sw2-access-me(config-if)#exit

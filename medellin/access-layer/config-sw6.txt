@@ -1,0 +1,14 @@
+sw6-access-me(config)#hostname sw6-access-me
+
+sw6-access-me(config)#vlan 30
+sw6-access-me(config-vlan)#name ACCOUNTS
+sw6-access-me(config-vlan)#exit
+
+sw6-access-me(config)#interface range fastEthernet0/1 - 23
+sw6-access-me(config-if-range)#switchport mode access
+sw6-access-me(config-if-range)#switchport access vlan 30
+sw6-access-me(config-vlan)#exit
+
+sw6-access-me(config)#interface fastEthernet 0/24
+sw6-access-me(config-if)#switchport mode trunk
+sw6-access-me(config-if)#exit

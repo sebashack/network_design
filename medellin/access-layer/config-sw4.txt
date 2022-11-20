@@ -1,0 +1,14 @@
+sw4-access-me(config)#hostname sw4-access-me
+
+sw4-access-me(config)#vlan 20
+sw4-access-me(config-vlan)#name SALES
+sw4-access-me(config-vlan)#exit
+
+sw4-access-me(config)#interface range fastEthernet0/1 - 23
+sw4-access-me(config-if-range)#switchport mode access
+sw4-access-me(config-if-range)#switchport access vlan 20
+sw4-access-me(config-vlan)#exit
+
+sw4-access-me(config)#interface fastEthernet 0/24
+sw4-access-me(config-if)#switchport mode trunk
+sw4-access-me(config-if)#exit

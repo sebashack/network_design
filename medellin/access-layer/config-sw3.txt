@@ -1,0 +1,23 @@
+sw3-access-me(config)#hostname sw3-access-me
+
+sw3-access-me(config)#vlan 10
+sw3-access-me(config-vlan)#name DESIGN
+sw3-access-me(config-vlan)#exit
+
+sw3-access-me(config)#vlan 20
+sw3-access-me(config-vlan)#name SALES
+sw3-access-me(config-vlan)#exit
+
+sw3-access-me(config)#interface range fastEthernet0/1 - 21
+sw3-access-me(config-if-range)#switchport mode access
+sw3-access-me(config-if-range)#switchport access vlan 10
+sw3-access-me(config-vlan)#exit
+
+sw3-access-me(config)#interface range fastEthernet0/22 - 23
+sw3-access-me(config-if-range)#switchport mode access
+sw3-access-me(config-if-range)#switchport access vlan 20
+sw3-access-me(config-vlan)#exit
+
+sw3-access-me(config)#interface fastEthernet 0/24
+sw3-access-me(config-if)#switchport mode trunk
+sw3-access-me(config-if)#exit

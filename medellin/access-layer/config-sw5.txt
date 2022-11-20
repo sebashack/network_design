@@ -1,0 +1,23 @@
+sw5-access-me(config)#hostname sw5-access-me
+
+sw5-access-me(config)#vlan 20
+sw5-access-me(config-vlan)#name SALES
+sw5-access-me(config-vlan)#exit
+
+sw5-access-me(config)#vlan 30
+sw5-access-me(config-vlan)#name ACCOUNTS
+sw5-access-me(config-vlan)#exit
+
+sw5-access-me(config)#interface range fastEthernet0/1 - 20
+sw5-access-me(config-if-range)#switchport mode access
+sw5-access-me(config-if-range)#switchport access vlan 20
+sw5-access-me(config-vlan)#exit
+
+sw5-access-me(config)#interface range fastEthernet0/21 - 23
+sw5-access-me(config-if-range)#switchport mode access
+sw5-access-me(config-if-range)#switchport access vlan 30
+sw5-access-me(config-vlan)#exit
+
+sw5-access-me(config)#interface fastEthernet 0/24
+sw5-access-me(config-if)#switchport mode trunk
+sw5-access-me(config-if)#exit

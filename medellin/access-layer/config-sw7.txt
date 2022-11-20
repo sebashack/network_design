@@ -1,0 +1,23 @@
+sw7-access-me(config)#hostname sw7-access-me
+
+sw7-access-me(config)#vlan 30
+sw7-access-me(config-vlan)#name ACCOUNTS
+sw7-access-me(config-vlan)#exit
+
+sw7-access-me(config)#vlan 40
+sw7-access-me(config-vlan)#name HR
+sw7-access-me(config-vlan)#exit
+
+sw7-access-me(config)#interface range fastEthernet0/1 - 14
+sw7-access-me(config-if-range)#switchport mode access
+sw7-access-me(config-if-range)#switchport access vlan 30
+sw7-access-me(config-vlan)#exit
+
+sw7-access-me(config)#interface range fastEthernet0/15 - 23
+sw7-access-me(config-if-range)#switchport mode access
+sw7-access-me(config-if-range)#switchport access vlan 40
+sw7-access-me(config-vlan)#exit
+
+sw7-access-me(config)#interface fastEthernet 0/24
+sw7-access-me(config-if)#switchport mode trunk
+sw7-access-me(config-if)#exit

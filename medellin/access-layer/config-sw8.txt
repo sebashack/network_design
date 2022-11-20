@@ -1,0 +1,23 @@
+sw8-access-me(config)#hostname sw8-access-me
+
+sw8-access-me(config)#vlan 40
+sw8-access-me(config-vlan)#name HR
+sw8-access-me(config-vlan)#exit
+
+sw8-access-me(config)#vlan 50
+sw8-access-me(config-vlan)#name IT
+sw8-access-me(config-vlan)#exit
+
+sw8-access-me(config)#interface range fastEthernet0/1 - 15
+sw8-access-me(config-if-range)#switchport mode access
+sw8-access-me(config-if-range)#switchport access vlan 40
+sw8-access-me(config-vlan)#exit
+
+sw8-access-me(config)#interface range fastEthernet0/16 - 23
+sw8-access-me(config-if-range)#switchport mode access
+sw8-access-me(config-if-range)#switchport access vlan 50
+sw8-access-me(config-vlan)#exit
+
+sw8-access-me(config)#interface fastEthernet 0/24
+sw8-access-me(config-if)#switchport mode trunk
+sw8-access-me(config-if)#exit

@@ -1,0 +1,23 @@
+sw9-access-me(config)#hostname sw9-access-me
+
+sw9-access-me(config)#vlan 50
+sw9-access-me(config-vlan)#name IT
+sw9-access-me(config-vlan)#exit
+
+sw9-access-me(config)#vlan 60
+sw9-access-me(config-vlan)#name PLANNING
+sw9-access-me(config-vlan)#exit
+
+sw9-access-me(config)#interface range fastEthernet0/1 - 12
+sw9-access-me(config-if-range)#switchport mode access
+sw9-access-me(config-if-range)#switchport access vlan 50
+sw9-access-me(config-vlan)#exit
+
+sw9-access-me(config)#interface range fastEthernet0/13 - 23
+sw9-access-me(config-if-range)#switchport mode access
+sw9-access-me(config-if-range)#switchport access vlan 60
+sw9-access-me(config-vlan)#exit
+
+sw9-access-me(config)#interface fastEthernet 0/24
+sw9-access-me(config-if)#switchport mode trunk
+sw9-access-me(config-if)#exit
