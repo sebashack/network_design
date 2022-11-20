@@ -1,0 +1,22 @@
+Switch(config)#hostname sw0-distribution-baq
+
+sw0-distribution-baq(config)#vlan 10
+sw0-distribution-baq(config-vlan)#name DESIGN
+sw0-distribution-baq(config-vlan)#exit
+
+sw0-distribution-baq(config)#vlan 20
+sw0-distribution-baq(config-vlan)#name ACCOUNT
+sw0-distribution-baq(config-vlan)#exit
+
+sw0-distribution-baq(config)#vlan 30
+sw0-distribution-baq(config-vlan)#name IT
+sw0-distribution-baq(config-vlan)#exit
+
+sw0-distribution-baq(config)#vlan 40
+sw0-distribution-baq(config-vlan)#name HR
+sw0-distribution-baq(config-vlan)#exit
+
+sw0-distribution-baq(config)#interface range fastEthernet0/1 - 5
+sw0-distribution-baq(config-if-range)#switchport trunk encapsulation dot1q
+sw0-distribution-baq(config-if-range)#switchport mode trunk
+sw0-distribution-baq(config-vlan)#exit

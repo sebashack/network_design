@@ -1,0 +1,23 @@
+sw3-access-baq(config)#hostname sw3-access-baq
+
+sw3-access-baq(config)#vlan 20
+sw3-access-baq(config-vlan)#name ACCOUNT
+sw3-access-baq(config-vlan)#exit
+
+sw3-access-baq(config)#vlan 30
+sw3-access-baq(config-vlan)#name IT
+sw3-access-baq(config-vlan)#exit
+
+sw3-access-baq(config)#interface range fastEthernet0/1 - 11
+sw3-access-baq(config-if-range)#switchport mode access
+sw3-access-baq(config-if-range)#switchport access vlan 20
+sw3-access-baq(config-if-range)#exit
+
+sw3-access-baq(config)#interface range fastEthernet0/12 - 23
+sw3-access-baq(config-if-range)#switchport mode access
+sw3-access-baq(config-if-range)#switchport access vlan 30
+sw3-access-baq(config-if-range)#exit
+
+sw3-access-baq(config)#interface fastEthernet 0/24
+sw3-access-baq(config-vlan)#switchport mode trunk
+sw3-access-baq(config-vlan)#exit
