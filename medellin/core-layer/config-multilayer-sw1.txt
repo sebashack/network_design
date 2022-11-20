@@ -1,0 +1,60 @@
+Switch(config)#hostname sw1-core-me
+
+sw1-core-me(config)#interface fastEthernet 0/24
+sw1-core-me(config-if)#switchport mode trunk
+sw1-core-me(config-if)#switchport trunk encapsulation dot1q
+sw1-core-me(config-if)#exit
+
+sw1-core-me(config)#vlan 10
+sw1-core-me(config-vlan)#name DESIGN
+sw1-core-me(config-vlan)#exit
+
+sw1-core-me(config)#vlan 20
+sw1-core-me(config-vlan)#name SALES
+sw1-core-me(config-vlan)#exit
+
+sw1-core-me(config)#vlan 30
+sw1-core-me(config-vlan)#name ACCOUNTS
+sw1-core-me(config-vlan)#exit
+
+sw1-core-me(config)#vlan 40
+sw1-core-me(config-vlan)#name HR
+sw1-core-me(config-vlan)#exit
+
+sw1-core-me(config)#VLAN 50
+sw1-core-me(config-vlan)#name IT
+sw1-core-me(config-vlan)#exit
+
+sw1-core-me(config)#vlan 60
+sw1-core-me(config-vlan)#name PLANNING
+sw1-core-me(config-vlan)#exit
+
+sw1-core-me(config-vlan)#interface vlan 10
+sw1-core-me(config-vlan)#ip address 10.65.64.1 255.255.255.128
+sw1-core-me(config-vlan)#no shutdown
+sw1-core-me(config-vlan)#exit
+
+sw1-core-me(config-vlan)#interface vlan 20
+sw1-core-me(config-vlan)#ip address 10.65.64.129 255.255.255.192
+sw1-core-me(config-vlan)#no shutdown
+sw1-core-me(config-vlan)#exit
+
+sw1-core-me(config-vlan)#interface vlan 30
+sw1-core-me(config-vlan)#ip address 10.65.64.193 255.255.255.192
+sw1-core-me(config-vlan)#no shutdown
+sw1-core-me(config-vlan)#exit
+
+sw1-core-me(config-vlan)#interface vlan 40
+sw1-core-me(config-vlan)#ip address 10.65.65.1 255.255.255.224
+sw1-core-me(config-vlan)#no shutdown
+sw1-core-me(config-vlan)#exit
+
+sw1-core-me(config-vlan)#interface vlan 50
+sw1-core-me(config-vlan)#ip address 10.65.65.33 255.255.255.224
+sw1-core-me(config-vlan)#no shutdown
+sw1-core-me(config-vlan)#exit
+
+sw1-core-me(config-vlan)#interface vlan 60
+sw1-core-me(config-vlan)#ip address 10.65.65.65 255.255.255.240
+sw1-core-me(config-vlan)#no shutdown
+sw1-core-me(config-vlan)#exit

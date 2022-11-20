@@ -1,5 +1,10 @@
 Switch(config)#hostname sw0-distribution-me
 
+sw0-core-me(config)#interface fastEthernet 0/24
+sw0-core-me(config-if)#switchport mode trunk
+sw0-core-me(config-if)#switchport trunk encapsulation dot1q
+sw0-core-me(config-if)#exit
+
 sw0-distribution-me(config)#vlan 10
 sw0-distribution-me(config-vlan)#name DESIGN
 sw0-distribution-me(config-vlan)#exit
