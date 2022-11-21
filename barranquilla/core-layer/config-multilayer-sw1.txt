@@ -43,3 +43,13 @@ sw1-core-baq(config-vlan)#exit
 
 sw1-core-baq(config)#ip routing
 sw1-core-baq(config)#exit
+
+sw1-core-baq(config)#interface vlan 1
+sw1-core-baq(config-if)#ip add 10.65.128.253 255.255.255.252
+sw1-core-baq(config-if)#no shutdown
+sw1-core-baq(config-if)#exit
+
+sw1-core-baq(config)#interface fastEthernet 0/23
+sw1-core-baq(config-if)#switchport mode trunk
+sw1-core-baq(config-if)#switchport trunk encapsulation dot1q
+sw1-core-baq(config-if)#exit
