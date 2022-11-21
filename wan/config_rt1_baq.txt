@@ -10,7 +10,6 @@ rt1-baq(config-if)#ip add 10.255.255.2 255.255.255.252
 rt1-baq(config-if)#no shutdown
 rt1-baq(config-if)#exit
 
-rt1-baq(config)#ip route 10.65.128.0 255.255.255.0 10.65.128.253
 rt1-baq(config)#ip route 10.65.64.0 255.255.254.0 10.255.255.1
-
+rt1-baq(config)#ip route 10.65.128.0 255.255.255.0 10.65.128.253
 rt1-baq(config)#exit

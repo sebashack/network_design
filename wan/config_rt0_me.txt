@@ -12,6 +12,4 @@ rt0-me(config-if)#exit
 
 rt0-me(config)#ip route 10.65.128.0 255.255.255.0 10.255.255.2
 rt0-me(config)#ip route 10.65.64.0 255.255.254.0 10.65.65.253
-
 rt0-me(config-if)#exit
-
