@@ -11,4 +11,11 @@ rt0-me(config-if)#no shutdown
 rt0-me(config-if)#exit
 
 rt0-me(config)#ip route 10.65.128.252 255.255.255.252 10.255.255.2
+rt0-me(config)#ip route 10.65.65.252 255.255.255.252 10.65.65.253
+rt0-me(config)#ip route 10.65.128.252 255.255.255.252 10.65.65.254
+
+rt0-me(config)#ip route 10.65.128.0 255.255.255.192 10.255.255.2
+
+
 rt0-me(config-if)#exit
+
