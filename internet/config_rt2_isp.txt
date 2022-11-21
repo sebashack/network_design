@@ -1,0 +1,25 @@
+Router(config)#hostname rt2-internet
+
+rt2-internet(config)#access-list 1 permit 10.65.64.0 255.255.254.0
+rt2-internet(config)#access-list 1 permit 10.65.128.0 255.255.255.0
+rt2-internet(config)#ip nat pool sovapublic 100.10.11.2 100.10.11.31 netmask 255.255.255.224
+rt2-internet(config)#ip nat inside source list 1 pool sovapublic overload
+rt2-internet(config)#exit
+
+rt2-internet(config)#interface fastEthernet 0/0
+rt2-internet(config-if)#ip address 10.255.250.2 255.255.255.252
+rt2-internet(config-if)#ip nat inside
+rt2-internet(config-if)#no shutdown
+rt2-internet(config-if)#exit
+
+rt2-internet(config)#interface fastEthernet 0/1
+rt2-internet(config-if)#ip address 10.255.249.1 255.255.255.252
+rt2-internet(config-if)#ip nat outside
+rt2-internet(config-if)#no shutdown
+rt2-internet(config-if)#exit
+
+rt2-internet(config)#interface fastEthernet 0/1
+rt2-internet(config-if)#ip address 192.169.0.1 255.255.255.252
+rt2-internet(config-router)#network 192.169.0.0
+rt2-internet(config-router)#network 145.168.0.0
+rt2-internet(config-if)#exit

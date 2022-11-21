@@ -68,3 +68,6 @@ sw1-core-me(config-if)#exit
 sw1-core-me(config)#ip routing
 sw1-core-me(config)#ip route 10.65.128.0 255.255.255.0 10.65.65.254
 sw1-core-me(config)#exit
+
+sw1-core-me(config)#ip route 192.169.0.0 255.255.255.0 10.65.65.254
+sw1-core-me(config)#exit

@@ -1,12 +1,12 @@
 Router(config)#hostname rt1-baq
 
 rt1-baq(config)#interface fastEthernet0/0
-rt1-baq(config-if)#ip add 10.65.128.254 255.255.255.252
+rt1-baq(config-if)#ip address 10.65.128.254 255.255.255.252
 rt1-baq(config-if)#no shutdown
 rt1-baq(config-if)#exit
 
 rt1-baq(config)#interface serial2/0
-rt1-baq(config-if)#ip add 10.255.255.2 255.255.255.252
+rt1-baq(config-if)#ip address 10.255.255.2 255.255.255.252
 rt1-baq(config-if)#no shutdown
 rt1-baq(config-if)#exit
 
