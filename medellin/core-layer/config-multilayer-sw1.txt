@@ -58,3 +58,6 @@ sw1-core-me(config-vlan)#interface vlan 60
 sw1-core-me(config-vlan)#ip address 10.65.65.65 255.255.255.240
 sw1-core-me(config-vlan)#no shutdown
 sw1-core-me(config-vlan)#exit
+
+sw1-core-me(config)#ip routing
+sw1-core-me(config)#exit

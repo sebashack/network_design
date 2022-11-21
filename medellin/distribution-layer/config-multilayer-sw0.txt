@@ -33,3 +33,6 @@ sw0-distribution-me(config)#interface range fastEthernet0/1 - 10
 sw0-distribution-me(config-if-range)#switchport trunk encapsulation dot1q
 sw0-distribution-me(config-if-range)#switchport mode trunk
 sw0-distribution-me(config-vlan)#exit
+
+sw0-distribution-me(config)#ip routing
+sw0-distribution-me(config)#exit
