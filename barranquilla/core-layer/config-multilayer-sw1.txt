@@ -1,0 +1,45 @@
+Switch(config)#hostname sw1-core-baq
+
+sw1-core-baq(config)#interface fastEthernet 0/24
+sw1-core-baq(config-if)#switchport mode trunk
+sw1-core-baq(config-if)#switchport trunk encapsulation dot1q
+sw1-core-baq(config-if)#exit
+
+sw1-core-baq(config)#vlan 10
+sw1-core-baq(config-vlan)#name DESIGN
+sw1-core-baq(config-vlan)#exit
+
+sw1-core-baq(config)#vlan 20
+sw1-core-baq(config-vlan)#name ACCOUNT
+sw1-core-baq(config-vlan)#exit
+
+sw1-core-baq(config)#vlan 30
+sw1-core-baq(config-vlan)#name IT
+sw1-core-baq(config-vlan)#exit
+
+sw1-core-baq(config)#vlan 40
+sw1-core-baq(config-vlan)#name HR
+sw1-core-baq(config-vlan)#exit
+
+sw1-core-baq(config)#interface vlan 10
+sw1-core-baq(config-vlan)#ip address 10.65.128.1 255.255.255.192
+sw1-core-baq(config-vlan)#no shutdown
+sw1-core-baq(config-vlan)#exit
+
+sw1-core-baq(config)#interface vlan 20
+sw1-core-baq(config-vlan)#ip address 10.65.128.65 255.255.255.224
+sw1-core-baq(config-vlan)#no shutdown
+sw1-core-baq(config-vlan)#exit
+
+sw1-core-baq(config)#interface vlan 30
+sw1-core-baq(config-vlan)#ip address 10.65.128.97 255.255.255.224
+sw1-core-baq(config-vlan)#no shutdown
+sw1-core-baq(config-vlan)#exit
+
+sw1-core-baq(config)#interface vlan 40
+sw1-core-baq(config-vlan)#ip address 10.65.128.129 255.255.255.240
+sw1-core-baq(config-vlan)#no shutdown
+sw1-core-baq(config-vlan)#exit
+
+sw1-core-baq(config)#ip routing
+sw1-core-baq(config)#exit

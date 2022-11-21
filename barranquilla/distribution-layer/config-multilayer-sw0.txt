@@ -1,5 +1,10 @@
 Switch(config)#hostname sw0-distribution-baq
 
+sw0-core-baq(config)#interface fastEthernet 0/24
+sw0-core-baq(config-if)#switchport trunk encapsulation dot1q
+sw0-core-baq(config-if)#switchport mode trunk
+sw0-core-baq(config-if)#exit
+
 sw0-distribution-baq(config)#vlan 10
 sw0-distribution-baq(config-vlan)#name DESIGN
 sw0-distribution-baq(config-vlan)#exit
@@ -20,3 +25,6 @@ sw0-distribution-baq(config)#interface range fastEthernet0/1 - 5
 sw0-distribution-baq(config-if-range)#switchport trunk encapsulation dot1q
 sw0-distribution-baq(config-if-range)#switchport mode trunk
 sw0-distribution-baq(config-vlan)#exit
+
+sw0-distribution-baq(config)#ip routing
+sw0-distribution-baq(config)#exit
