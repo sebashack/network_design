@@ -15,7 +15,7 @@ rt0-me(config)#ip route 10.65.64.0 255.255.254.0 10.65.65.253
 rt0-me(config-if)#exit
 
 rt0-me(config)#interface fastEthernet1/0
-rt0-me(config-if)#ip address 10.255.250.1 255.255.255.252
+rt0-me(config-if)#ip address 10.100.11.2 255.255.255.252
 rt0-me(config-if)#no shutdown
 rt0-me(config-if)#exit
 

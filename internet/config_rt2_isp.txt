@@ -7,7 +7,7 @@ rt2-internet(config)#ip nat inside source list 1 pool sovapublic overload
 rt2-internet(config)#exit
 
 rt2-internet(config)#interface fastEthernet 0/1
-rt2-internet(config-if)#ip address 10.255.250.2 255.255.255.252
+rt2-internet(config-if)#ip address 100.10.11.3 255.255.255.252
 rt2-internet(config-if)#ip nat inside
 rt2-internet(config-if)#no shutdown
 rt2-internet(config-if)#exit
