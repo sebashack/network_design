@@ -1,11 +1,5 @@
 Router(config)#hostname rt2-isp
 
-rt2-isp(config)#access-list 1 permit 10.65.64.0 0.0.0.255
-rt2-isp(config)#access-list 1 permit 10.65.128.0 0.0.0.255
-rt2-isp(config)#ip nat pool sovapublic 100.10.11.2 100.10.11.31 netmask 255.255.255.224
-rt2-isp(config)#ip nat inside source list 1 pool sovapublic overload
-rt2-isp(config)#exit
-
 rt2-isp(config)#interface fastEthernet 0/0
 rt2-isp(config-if)#ip address 192.169.0.1 255.255.255.0
 rt2-isp(config-if)#ip nat inside
@@ -18,5 +12,5 @@ rt2-isp(config-if)#ip nat outside
 rt2-isp(config-if)#no shutdown
 rt2-isp(config-if)#exit
 
-rt2-isp(config)#ip route 10.65.64.0 255.255.254.0 144.120.113.1
+rt2-isp(config)#ip route 100.10.11.0 255.255.255.224 144.120.113.1
 rt2-isp(config-if)#exit
