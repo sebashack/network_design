@@ -2,6 +2,13 @@ Router(config)#hostname rt0-me
 
 rt0-me(config)#interface fastEthernet0/0
 rt0-me(config-if)#ip address 10.65.65.254 255.255.255.252
+rt0-me(config-if)#ip nat inside
+rt0-me(config-if)#no shutdown
+rt0-me(config-if)#exit
+
+rt0-me(config)#interface fastEthernet1/0
+rt0-me(config-if)#ip address 144.120.113.1 255.255.255.252
+rt0-me(config-if)#ip nat outside
 rt0-me(config-if)#no shutdown
 rt0-me(config-if)#exit
 
@@ -12,12 +19,5 @@ rt0-me(config-if)#exit
 
 rt0-me(config)#ip route 10.65.128.0 255.255.255.0 10.255.255.2
 rt0-me(config)#ip route 10.65.64.0 255.255.254.0 10.65.65.253
-rt0-me(config-if)#exit
-
-rt0-me(config)#interface fastEthernet1/0
-rt0-me(config-if)#ip address 10.100.11.2 255.255.255.252
-rt0-me(config-if)#no shutdown
-rt0-me(config-if)#exit
-
-rt0-me(config)#ip route 192.169.0.0 255.255.255.0 10.255.250.2
+rt0-me(config)#ip route 192.169.0.0 255.255.255.0 144.120.113.2
 rt0-me(config-if)#exit
