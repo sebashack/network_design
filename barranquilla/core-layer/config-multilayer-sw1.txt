@@ -1,8 +1,8 @@
 Switch(config)#hostname sw1-core-baq
 
 sw1-core-baq(config)#interface fastEthernet 0/24
-sw1-core-baq(config-if)#switchport mode trunk
 sw1-core-baq(config-if)#switchport trunk encapsulation dot1q
+sw1-core-baq(config-if)#switchport mode trunk
 sw1-core-baq(config-if)#exit
 
 sw1-core-baq(config)#vlan 10
@@ -48,6 +48,7 @@ sw1-core-baq(config-if)#no shutdown
 sw1-core-baq(config-if)#exit
 
 sw1-core-baq(config)#ip routing
+sw1-core-baq(config)#ip route 172.31.35.0 255.255.255.128 10.65.128.254
 sw1-core-baq(config)#ip route 10.65.64.0 255.255.254.0 10.65.128.254
 sw1-core-baq(config)#ip route 192.169.0.0 255.255.255.0 10.65.128.254
 sw1-core-baq(config)#exit

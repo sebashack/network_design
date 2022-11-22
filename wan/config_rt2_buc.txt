@@ -1,0 +1,23 @@
+Router(config)#hostname rt2-buc
+
+rt2-buc(config)#interface fastEthernet0/0
+rt2-buc(config-if)#ip address 172.31.35.254 255.255.255.252
+rt2-buc(config-if)#no shutdown
+rt2-buc(config-if)#exit
+
+rt2-buc(config)#interface serial2/0
+rt2-buc(config-if)#ip address 172.29.255.1 255.255.255.252
+rt2-buc(config-if)#ip nat inside
+rt2-buc(config-if)#no shutdown
+rt2-buc(config-if)#exit
+
+rt2-buc(config)#interface serial3/0
+rt2-buc(config-if)#ip address 172.30.255.1 255.255.255.252
+rt2-buc(config-if)#no shutdown
+rt2-buc(config-if)#exit
+
+rt2-buc(config)#ip route 172.31.35.0 255.255.255.128 172.31.35.253
+rt2-buc(config)#ip route 10.65.64.0 255.255.254.0 172.29.255.2
+rt2-buc(config)#ip route 10.65.128.0 255.255.255.0 172.30.255.2
+rt2-buc(config)#ip route 192.169.0.0 255.255.255.0 172.29.255.2
+rt2-buc(config)#exit

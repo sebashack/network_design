@@ -1,0 +1,27 @@
+Switch(config)#hostname sw0-core-distribution-buc
+
+sw0-core-distribution-buc(config)#vlan 10
+sw0-core-distribution-buc(config-vlan)#name GENERAL
+sw0-core-distribution-buc(config-vlan)#exit
+
+sw0-core-distribution-buc(config)#interface range fastEthernet0/1 - 6
+sw0-core-distribution-buc(config-if-range)#switchport trunk encapsulation dot1q
+sw0-core-distribution-buc(config-if-range)#switchport mode trunk
+sw0-core-distribution-buc(config-vlan)#exit
+
+sw0-core-distribution-buc(config)#interface vlan 10
+sw0-core-distribution-buc(config-vlan)#ip address 172.31.35.1 255.255.255.128
+sw0-core-distribution-buc(config-vlan)#no shutdown
+sw0-core-distribution-buc(config-vlan)#exit
+
+sw0-core-distribution-buc(config)#interface fastEthernet 0/23
+sw0-core-distribution-buc(config-if)#no switchport
+sw0-core-distribution-buc(config-if)#ip add 172.31.35.253 255.255.255.252
+sw0-core-distribution-buc(config-if)#no shutdown
+sw0-core-distribution-buc(config-if)#exit
+
+sw0-core-distribution-buc(config)#ip routing
+sw0-core-distribution-buc(config)#ip route 10.65.128.0 255.255.254.0 172.31.35.254
+sw0-core-distribution-buc(config)#ip route 10.65.64.0 255.255.254.0 172.31.35.254
+sw0-core-distribution-buc(config)#ip route 192.169.0.0 255.255.255.0 172.31.35.254
+sw0-core-distribution-buc(config)#exit

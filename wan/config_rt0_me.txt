@@ -23,7 +23,8 @@ rt0-me(config-if)#ip address 10.255.255.1 255.255.255.252
 rt0-me(config-if)#no shutdown
 rt0-me(config-if)#exit
 
-rt0-me(config)#ip route 10.65.128.0 255.255.255.0 10.255.255.2
+rt0-me(config)#ip route 172.31.35.0 255.255.255.128 172.29.255.1
 rt0-me(config)#ip route 10.65.64.0 255.255.254.0 10.65.65.253
+rt0-me(config)#ip route 10.65.128.0 255.255.255.0 10.255.255.2
 rt0-me(config)#ip route 192.169.0.0 255.255.255.0 144.120.113.2
 rt0-me(config-if)#exit
