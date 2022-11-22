@@ -1,0 +1,14 @@
+sw5-access-buc(config)#hostname sw5-access-buc
+
+sw5-access-buc(config)#vlan 10
+sw5-access-buc(config-vlan)#name GENERAL
+sw5-access-buc(config-vlan)#exit
+
+sw5-access-buc(config)#interface range fastEthernet0/1 - 23
+sw5-access-buc(config-if-range)#switchport mode access
+sw5-access-buc(config-if-range)#switchport access vlan 10
+sw5-access-buc(config-vlan)#exit
+
+sw5-access-buc(config)#interface fastEthernet 0/24
+sw5-access-buc(config-if)#switchport mode trunk
+sw5-access-buc(config-if)#exit

@@ -1,0 +1,14 @@
+sw4-access-buc(config)#hostname sw4-access-buc
+
+sw4-access-buc(config)#vlan 10
+sw4-access-buc(config-vlan)#name GENERAL
+sw4-access-buc(config-vlan)#exit
+
+sw4-access-buc(config)#interface range fastEthernet0/1 - 23
+sw4-access-buc(config-if-range)#switchport mode access
+sw4-access-buc(config-if-range)#switchport access vlan 10
+sw4-access-buc(config-vlan)#exit
+
+sw4-access-buc(config)#interface fastEthernet 0/24
+sw4-access-buc(config-if)#switchport mode trunk
+sw4-access-buc(config-if)#exit
