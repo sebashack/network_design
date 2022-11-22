@@ -49,4 +49,5 @@ sw1-core-baq(config-if)#exit
 
 sw1-core-baq(config)#ip routing
 sw1-core-baq(config)#ip route 10.65.64.0 255.255.254.0 10.65.128.254
+sw1-core-baq(config)#ip route 192.169.0.0 255.255.255.0 10.65.128.254
 sw1-core-baq(config)#exit
