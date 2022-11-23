@@ -1,12 +1,12 @@
 Router(config)#hostname rt2-isp
 
-rt2-isp(config)#interface fastEthernet 0/0
+rt2-isp(config)#interface fastEthernet0/0
 rt2-isp(config-if)#ip address 192.169.0.1 255.255.255.0
 rt2-isp(config-if)#ip nat inside
 rt2-isp(config-if)#no shutdown
 rt2-isp(config-if)#exit
 
-rt2-isp(config)#interface fastEthernet 0/1
+rt2-isp(config)#interface fastEthernet0/1
 rt2-isp(config-if)#ip address 144.120.113.2 255.255.255.252
 rt2-isp(config-if)#ip nat outside
 rt2-isp(config-if)#no shutdown

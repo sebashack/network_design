@@ -7,7 +7,6 @@ rt2-buc(config-if)#exit
 
 rt2-buc(config)#interface serial2/0
 rt2-buc(config-if)#ip address 172.29.255.1 255.255.255.252
-rt2-buc(config-if)#ip nat inside
 rt2-buc(config-if)#no shutdown
 rt2-buc(config-if)#exit
 
